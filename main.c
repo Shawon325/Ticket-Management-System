@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <ncurses.h>
 #include <stdlib.h>
 #include <unistd.h>
 #include <limits.h>
@@ -7,8 +8,8 @@
 #define MAX_LIMIT 100
 #define COLMNV 10
 #define ROWV 4
-#define BUS_FILE "C:\\Users\\mahad\\OneDrive\\Desktop\\BusTicketReservationProject\\bus.txt"
-#define CUS_FILE "C:\\Users\\mahad\\OneDrive\\Desktop\\BusTicketReservationProject\\customer.txt"
+#define BUS_FILE "bus.txt"
+#define CUS_FILE "customer.txt"
 int  fseat[ROWV][COLMNV], booked_row, booked_col;
 
 void welcomeScreen(),mainMenu(),menuScreen() , busAdd(), busAddView() ,busRootAdd(), busRootView(), bookedSeat(),seeAvailableBus() ;
@@ -26,23 +27,22 @@ int main()
 void welcomeScreen()
 {
 
-    printf("\n\n\n\n\n\n\n\t\t\t\t@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+    printf("\n\n\n\n\n\n\n\t\t\t\t-----------------------------------------");
 	printf("\n\t\t\t\t#\t\t WELCOME\t\t#");
 	printf("\n\t\t\t\t#\t Ticket Management System \t#");
 	printf("\n\t\t\t\t#\t\t Team Members \t\t#");
 	printf("\n\t\t\t\t#\t Md. Shahidul Bhuiyan - 004 \t#");
-	printf("\n\t\t\t\t#\t Ridoy Chandro Sarkar - 005 \t\t#");
+	printf("\n\t\t\t\t#\t Ridoy Chandro Sarkar - 005 \t#");
 	printf("\n\t\t\t\t#\t Tanvir Hossen - 008 \t\t#");
-	printf("\n\t\t\t\t#\t Atik Faysal - 053 \t\t#");
-	printf("\n\t\t\t\t#\t Kazi Atik Foysal - 054 \t\t#");
+	printf("\n\t\t\t\t#\t Kazi Atik Foysal - 054 \t#");
 	printf("\n\t\t\t\t#\t Md Imran Ahamed - 014 \t\t#");
-	printf("\n\t\t\t\t@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n");
+	printf("\n\t\t\t\t-----------------------------------------\n");
     printf("\t\t\t\t\t\n");
 }
 
 void menuScreen()
 {
-    printf("\n\n\t\t\t\t@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n");
+    printf("\n\n\t\t\t\t----------------------------------------\n");
 
     //printf("\t\t\t\t\t\t Main Menu\t\t");
     printf("\t\t\t\t\t MAIN MENU \n");
@@ -52,12 +52,12 @@ void menuScreen()
     printf("\t\t\t\t\t 3.Press 3 For Customer SingUp \n");
     printf("\t\t\t\t\t 4.Press 4 For Customer Login \n");
     printf("\t\t\t\t\t 5.Press 5 For Quit :) \n");
-    printf("\n\t\t\t\t@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n");
+    printf("\n\t\t\t\t----------------------------------------\n");
 }
 
 void menuScreenAdmin()
 {
-    printf("\n\n\t\t @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n");
+    printf("\n\n\t\t -------------------------------------------\n");
     printf("\t\t\t ADMIN MENU \n");
     printf("\t\t\t ----------- \n");
     printf("\t\t\t 1.Press 1 For  Add Bus Root \n");
@@ -69,7 +69,7 @@ void menuScreenAdmin()
     printf("\t\t\t 7.Press 7 For See Bus All Booked Details \n");
     printf("\t\t\t 8.Press 8 Return Main Menu \n");
     printf("\t\t\t 9.Press 9 For Quit :) \n");
-    printf("\n\t\t @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n");
+    printf("\n\t\t ------------------------------------------------\n");
 }
 
 void cumtomerMenu()
@@ -215,7 +215,8 @@ void adminRegister()
 
 void adminLogin()
 {
-    char usserid[MAX_LIMIT];
+    int i;
+    char usserid[MAX_LIMIT], ch;
     char password[MAX_LIMIT];
     FILE *fptr;
     struct user r;
@@ -229,7 +230,22 @@ void adminLogin()
     scanf("%s", &usserid);
 
     printf("\t Password : ");
-    scanf("%s", &password);
+    initscr();
+    noecho();
+
+    for(i = 0;i < 100;i++)
+    {
+        ch = getch();
+        if(ch == '\n')
+            break;
+
+        password[i] = ch;
+        ch = '*' ;
+        printw("%c ", ch);
+    }
+    password[i] = '\0';
+    endwin();
+    //scanf("%s", &password);
     while (fread(&r, sizeof(r), 1, fptr));
     {
         if (strcmp(usserid, r.user_id) == 0 && strcmp(password, r.password)==0)
@@ -294,7 +310,8 @@ void addNewCustomer()
 
 void customerLogin()
 {
-    char usserid[MAX_LIMIT];
+    int i;
+    char usserid[MAX_LIMIT], ch;
     char password[MAX_LIMIT];
     int count_commit = 0;
     FILE *fptr;
@@ -308,6 +325,21 @@ void customerLogin()
     printf("\t UserID : ");
     scanf("%s", &usserid);
     printf("\t Password : ");
+    initscr();
+    noecho();
+
+    for(i = 0;i < 100;i++)
+    {
+        ch = getch();
+        if(ch == '\n')
+            break;
+
+        password[i] = ch;
+        ch = '*' ;
+        printw("%c ", ch);
+    }
+    password[i] = '\0';
+    endwin();
     scanf("%s", &password);
     while (fread(&cr, sizeof(cr), 1, fptr));
     {
@@ -802,5 +834,4 @@ void displaySeat()
     printf("\n");
 
 }
-
 
