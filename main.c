@@ -34,16 +34,9 @@ void welcomeScreen()
 	printf("\n\t\t\t\t#\t Md. Shahidul Bhuiyan - 004 \t#");
 	printf("\n\t\t\t\t#\t Ridoy Chandro Sarkar - 005 \t#");
 	printf("\n\t\t\t\t#\t Tanvir Hossen - 008 \t\t#");
-<<<<<<< HEAD
-	printf("\n\t\t\t\t#\t Md Imran Ahamed - 014 \t\t#");
-	printf("\n\t\t\t\t#\t Atik Faysal - 053 \t\t#");
-	printf("\n\t\t\t\t#\t Kazi Atik Foysal - 054 \t\t#");
-	printf("\n\t\t\t\t@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n");
-=======
 	printf("\n\t\t\t\t#\t Kazi Atik Foysal - 054 \t#");
 	printf("\n\t\t\t\t#\t Md Imran Ahamed - 014 \t\t#");
 	printf("\n\t\t\t\t-----------------------------------------\n");
->>>>>>> 784f438120e5f3ee74439a8a578905fd62cedeca
     printf("\t\t\t\t\t\n");
 }
 
