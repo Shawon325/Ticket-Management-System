@@ -27,26 +27,23 @@ int main()
 void welcomeScreen()
 {
 
-    printf("\n\n\n\n\n\n\n\t\t\t\t-----------------------------------------");
-	printf("\n\t\t\t\t#\t\t WELCOME\t\t#");
-	printf("\n\t\t\t\t#\t Ticket Management System \t#");
-	printf("\n\t\t\t\t#\t\t Team Members \t\t#");
-	printf("\n\t\t\t\t#\t Md. Shahidul Bhuiyan - 004 \t#");
-	printf("\n\t\t\t\t#\t Ridoy Chandro Sarkar - 005 \t#");
-	printf("\n\t\t\t\t#\t Tanvir Hossen - 008 \t\t#");
-	printf("\n\t\t\t\t#\t Kazi Atik Foysal - 054 \t#");
-	printf("\n\t\t\t\t#\t Md Imran Ahamed - 014 \t\t#");
-	printf("\n\t\t\t\t-----------------------------------------\n");
+    printf("\n\n\n\n\n\n\n\t\t\t\t---------------------------------------------------------");
+	printf("\n\t\t\t\t#\t\t\t WELCOME \t\t\t#");
+	printf("\n\t\t\t\t#\t Transportation Ticket Management System \t#");
+	printf("\n\t\t\t\t#\t\t\t Team Members \t\t\t#");
+	printf("\n\t\t\t\t#\t\t Md. Shahidul Bhuiyan = 004 \t\t#");
+	printf("\n\t\t\t\t#\t\t Ridoy Chandra Sarkar = 005 \t\t#");
+	printf("\n\t\t\t\t#\t\t Tanvir Hossen        = 008  \t\t#");
+	printf("\n\t\t\t\t#\t\t Kazi Atik Foysal     = 054   \t\t#");
+	printf("\n\t\t\t\t#\t\t Md Imran Ahamed      = 014  \t\t#");
+	printf("\n\t\t\t\t---------------------------------------------------------\n");
     printf("\t\t\t\t\t\n");
 }
 
 void menuScreen()
 {
     printf("\n\n\t\t\t\t----------------------------------------\n");
-
-    //printf("\t\t\t\t\t\t Main Menu\t\t");
-    printf("\t\t\t\t\t MAIN MENU \n");
-    printf("\t\t\t\t\t --------- \n");
+    printf("\t\t\t\t\t\t MAIN MENU \n");
     printf("\t\t\t\t\t 1.Press 1 For Register Admin \n");
     printf("\t\t\t\t\t 2.Press 2 For Admin Login \n");
     printf("\t\t\t\t\t 3.Press 3 For Customer SingUp \n");
@@ -58,8 +55,7 @@ void menuScreen()
 void menuScreenAdmin()
 {
     printf("\n\n\t\t -------------------------------------------\n");
-    printf("\t\t\t ADMIN MENU \n");
-    printf("\t\t\t ----------- \n");
+    printf("\t\t\t\t ADMIN MENU \n");
     printf("\t\t\t 1.Press 1 For  Add Bus Root \n");
     printf("\t\t\t 2.Press 2 For See Bus Root Details \n");
     printf("\t\t\t 3.Press 3 For Add Bus  \n");
@@ -131,7 +127,7 @@ void subMenuAdmin()
         }else if(choice ==7){
             bookedAllData();
         }else if(choice == 8) {
-            mainMenu();
+            menuScreenAdmin();
         }else if(choice == 9) {
             printf("\t \a Thank You For Choosing Us.Have a Great Day :)\n");
             exit(0);
@@ -302,10 +298,9 @@ void addNewCustomer()
     printf("\t \t @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n");
     printf("\t \t \t You are successfully registered!! \n");
     printf("\t \t \t Your UserId is %s and your password is %s \n", cr.user_id, cr.password);
-    printf("\t \t \t Now login with your userid and password!! Press By 3 \n");
+    printf("\t \t \t Now login with your userid and password!! Press By 4 \n");
     printf("\t \t @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n");
     printf("\n");
-
 }
 
 void customerLogin()
@@ -591,7 +586,6 @@ void seeAvailableBus()
                     for (int j = 0; j < COLMNV; j++)
                     {
 
-
                         if(seat.book_row == i && seat.book_column == j)
                         {
                              printf("\t %d",h);
@@ -682,11 +676,7 @@ void bookedAllData()
      while(fread(&seat, sizeof(struct seatbook), 1, fptr))
     {
 
-
-
         printf ("\t\t Date = %s \t| Bus Name = %s \t| Row[%d]Column[%d] = Booked\t \n",seat.date, seat.bus_name,seat.book_row, seat.book_column, seat.availabl_seat, seat.book_seat);
-
-
     }
 
     printf("\t---------------------------------------------------------------------------------------------------\n");
@@ -834,4 +824,5 @@ void displaySeat()
     printf("\n");
 
 }
+
 
