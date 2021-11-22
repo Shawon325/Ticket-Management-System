@@ -26,16 +26,16 @@ int main()
 void welcomeScreen()
 {
 
-    printf("\n\n\n\n\n\n\n\t\t\t\t-----------------------------------------");
-    printf("\n\t\t\t\t#\t\t WELCOME\t\t#");
-    printf("\n\t\t\t\t#\t Ticket Management System \t#");
-    printf("\n\t\t\t\t#\t\t Team Members \t\t#");
-    printf("\n\t\t\t\t#\t Md. Shahidul Bhuiyan - 004 \t#");
-    printf("\n\t\t\t\t#\t Ridoy Chandro Sarkar - 005 \t#");
-    printf("\n\t\t\t\t#\t Tanvir Hossen - 008 \t\t#");
-    printf("\n\t\t\t\t#\t Kazi Atik Foysal - 054 \t#");
-    printf("\n\t\t\t\t#\t Md Imran Ahamed - 014 \t\t#");
-    printf("\n\t\t\t\t-----------------------------------------\n");
+    printf("\n\n\n\n\n\n\n\t\t\t\t---------------------------------------------------------");
+    printf("\n\t\t\t\t#\t\t\t WELCOME \t\t\t#");
+    printf("\n\t\t\t\t#\t Transportation Ticket Management System \t#");
+    printf("\n\t\t\t\t#\t\t\t Team Members \t\t\t#");
+    printf("\n\t\t\t\t#\t\t Md. Shahidul Bhuiyan   - 004 \t\t#");
+    printf("\n\t\t\t\t#\t\t Ridoy Chandro Sarkar   - 005 \t\t#");
+    printf("\n\t\t\t\t#\t\t Tanvir Hossen          - 008 \t\t#");
+    printf("\n\t\t\t\t#\t\t Kazi Atik Foysal       - 054 \t\t#");
+    printf("\n\t\t\t\t#\t\t Md Imran Ahamed        - 014 \t\t#");
+    printf("\n\t\t\t\t---------------------------------------------------------\n");
     printf("\t\t\t\t\t\n");
 }
 
@@ -44,8 +44,7 @@ void menuScreen()
     printf("\n\n\t\t\t\t----------------------------------------\n");
 
     //printf("\t\t\t\t\t\t Main Menu\t\t");
-    printf("\t\t\t\t\t MAIN MENU \n");
-    printf("\t\t\t\t\t --------- \n");
+    printf("\t\t\t\t\t\t MAIN MENU \n");
     printf("\t\t\t\t\t 1.Press 1 For Register Admin \n");
     printf("\t\t\t\t\t 2.Press 2 For Admin Login \n");
     printf("\t\t\t\t\t 3.Press 3 For Customer Sign up \n");
